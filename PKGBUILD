@@ -56,9 +56,9 @@ source=(https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21%
         freedesktop-jconsole.desktop
         freedesktop-jshell.desktop)
 sha256sums=('82f64c53acaa045370d6762ebd7441b74e6fda14b464d54d1ff8ca941ec069e6'
-            'ae076317d93a389cc0c893fd9ec6769ae860c2cc01f8c8bed3f4ee476c73e625'
-            'dc278160ca7df32bcfab0a5420c09eaf6f4602d30f57b6c5bedb0f60062c5228'
-            'd0913ae3b9f469f8567432b0867222d66f50008c313f5a0882d15994ba19ec01')
+            '23ced5efdb3381e6318af1acb343c714b2d9aacdb4666fee05dc58cd254b2d07'
+            'ef7f6465272608a35615665f8e4b0837b43b4db7bf22f8eb7cecdd6170b5b2ee'
+            '166b128e025404e7b4048c5b3c958e080a13a98f84b6faa9cfe11530f553e287')
 
 _jvmdir=/usr/lib/jvm/java-${_majorver}-temurin
 _jdkdir=jdk-${_tag_ver}

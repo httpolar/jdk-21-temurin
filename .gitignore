@@ -1,2 +1,5 @@
 src/
 pkg/
+OpenJDK*.tar.gz
+jdk21*.pkg.tar.zst
+

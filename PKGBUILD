@@ -3,12 +3,14 @@
 # this package happens to be my first interaction Arch Linux packages creation :) 
 
 _majorver=21
-_completever=21
-_updatever=35
+_minorver=0
+_patchver=1
+_buildver=12
+_completever=21.0.1
 pkgrel=1
-pkgver=${_completever}.u${_updatever}
-_tag_ver=${_completever}+${_updatever}
-[ $_majorver != $_completever ] && _versuffix=U
+pkgver=${_majorver}.${_minorver}.${_patchver}.u${_buildver}
+_tag_ver=${_majorver}.${_minorver}.${_patchver}+${_buildver}
+_tag_ver_short=${_majorver}.${_minorver}.${_patchver}+${_buildver%.*}
 
 pkgname=jdk21-temurin
 pkgdesc="Temurin ${_majorver} (OpenJDK ${_majorver} Java binaries by Adoptium, formerly AdoptOpenJDK)"
@@ -33,6 +35,7 @@ provides=("java-runtime-headless=${_majorver}"
           "jdk-openjdk=${pkgver}"
           "openjdk${_majorver}-src=${pkgver}"
           "openjdk-src=${pkgver}")
+replaces=("jdk-adoptopenjdk")
 backup=(etc/java-${_majorver}-temurin/logging.properties
         etc/java-${_majorver}-temurin/management/jmxremote.access
         etc/java-${_majorver}-temurin/management/jmxremote.password.template
@@ -51,11 +54,11 @@ backup=(etc/java-${_majorver}-temurin/logging.properties
 install=install_jdk21-temurin.sh
 options=(!strip)
 
-source=(https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21%2B35/OpenJDK21U-jdk_x64_linux_hotspot_21_35.tar.gz
+source=(https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.1%2B12/OpenJDK21U-jdk_x64_linux_hotspot_21.0.1_12.tar.gz
         freedesktop-java.desktop
         freedesktop-jconsole.desktop
         freedesktop-jshell.desktop)
-sha256sums=('82f64c53acaa045370d6762ebd7441b74e6fda14b464d54d1ff8ca941ec069e6'
+sha256sums=('1a6fa8abda4c5caed915cfbeeb176e7fbd12eb6b222f26e290ee45808b529aa1'
             '23ced5efdb3381e6318af1acb343c714b2d9aacdb4666fee05dc58cd254b2d07'
             'ef7f6465272608a35615665f8e4b0837b43b4db7bf22f8eb7cecdd6170b5b2ee'
             '166b128e025404e7b4048c5b3c958e080a13a98f84b6faa9cfe11530f553e287')
